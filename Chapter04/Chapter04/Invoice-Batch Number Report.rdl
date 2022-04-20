@@ -53,6 +53,18 @@ WHERE        (Customer.BillingCity = @BillingCity) AND (InvoiceBatch.RunDate &gt
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="BillingCities">
+      <Query>
+        <DataSourceName>Galactic</DataSourceName>
+        <CommandText>Select Distinct BillingCity from Customer order by BillingCity</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="BillingCity">
+          <DataField>BillingCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -408,14 +420,26 @@ WHERE        (Customer.BillingCity = @BillingCity) AND (InvoiceBatch.RunDate &gt
   <ReportParameters>
     <ReportParameter Name="BillingCity">
       <DataType>String</DataType>
-      <Prompt>Billing City</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>Axelburg</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Select a City</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>BillingCities</DataSetName>
+          <ValueField>BillingCity</ValueField>
+          <LabelField>BillingCity</LabelField>
+        </DataSetReference>
+      </ValidValues>
     </ReportParameter>
     <ReportParameter Name="StartDate">
-      <DataType>String</DataType>
+      <DataType>DateTime</DataType>
       <Prompt>Start Date</Prompt>
     </ReportParameter>
     <ReportParameter Name="EndDate">
-      <DataType>String</DataType>
+      <DataType>DateTime</DataType>
       <Prompt>End Date</Prompt>
     </ReportParameter>
   </ReportParameters>
