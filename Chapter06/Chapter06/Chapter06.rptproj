@@ -55,7 +55,11 @@
     <DataSource Include="Galactic.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Copy (2) of DelvLostPkgChart.rdl" />
+    <Report Include="Copy (3) of DelvLostPkgChart.rdl" />
+    <Report Include="Copy of DelvLostPkgChart.rdl" />
     <Report Include="DelvLostPkgChart.rdl" />
+    <Report Include="FuelPriceChart.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
