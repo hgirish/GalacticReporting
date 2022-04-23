@@ -17,11 +17,15 @@
           <QueryParameter Name="@Year">
             <Value>=Parameters!Year.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@PropulsionType">
+            <Value>=Parameters!PropulsionType.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT        Propulsion.Description AS FuelType, FuelPrice.PriceStartDate, FuelPrice.Price
 FROM            FuelPrice INNER JOIN
                          Propulsion ON FuelPrice.PropulsionID = Propulsion.PropulsionID
-WHERE        (YEAR(FuelPrice.PriceStartDate) = @Year)
+WHERE        (YEAR(FuelPrice.PriceStartDate) = @Year) AND (Propulsion.Description = @PropulsionType) OR
+                         (YEAR(FuelPrice.PriceStartDate) = @Year) AND (@PropulsionType = 'All')
 ORDER BY FuelType, FuelPrice.PriceStartDate</CommandText>
       </Query>
       <Fields>
@@ -50,6 +54,26 @@ ORDER BY year</CommandText>
         <Field Name="year">
           <DataField>year</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="FuelTypes">
+      <Query>
+        <DataSourceName>Galactic</DataSourceName>
+        <CommandText>SELECT        'All' AS FuelType, '_All' AS SortField
+UNION
+SELECT        Description, Description AS SortField
+FROM            Propulsion
+ORDER BY SortField</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="FuelType">
+          <DataField>FuelType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SortField">
+          <DataField>SortField</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -469,6 +493,17 @@ ORDER BY year</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="PropulsionType">
+      <DataType>String</DataType>
+      <Prompt>Propulsion Type</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>FuelTypes</DataSetName>
+          <ValueField>FuelType</ValueField>
+          <LabelField>FuelType</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -479,6 +514,11 @@ ORDER BY year</CommandText>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>Year</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>PropulsionType</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
