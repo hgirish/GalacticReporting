@@ -55,6 +55,7 @@
     <DataSource Include="Galactic.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="BusinessTypeDistribution.rdl" />
     <Report Include="Copy (2) of DelvLostPkgChart.rdl" />
     <Report Include="Copy (3) of DelvLostPkgChart.rdl" />
     <Report Include="Copy of DelvLostPkgChart.rdl" />
