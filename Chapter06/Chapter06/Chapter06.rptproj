@@ -59,6 +59,7 @@
     <Report Include="Copy (2) of DelvLostPkgChart.rdl" />
     <Report Include="Copy (3) of DelvLostPkgChart.rdl" />
     <Report Include="Copy of DelvLostPkgChart.rdl" />
+    <Report Include="DaysInMaint.rdl" />
     <Report Include="DelvLostPkgChart.rdl" />
     <Report Include="FuelPriceChart.rdl" />
   </ItemGroup>
