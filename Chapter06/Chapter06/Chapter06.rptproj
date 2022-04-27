@@ -61,6 +61,7 @@
     <Report Include="Copy of DelvLostPkgChart.rdl" />
     <Report Include="DaysInMaint.rdl" />
     <Report Include="DelvLostPkgChart.rdl" />
+    <Report Include="DiscountAnalysis.rdl" />
     <Report Include="FuelPriceChart.rdl" />
     <Report Include="PkgWtByPlanet.rdl" />
   </ItemGroup>
