@@ -64,6 +64,10 @@
     <Report Include="DigitalDashboard.rdl" />
     <Report Include="DiscountAnalysis.rdl" />
     <Report Include="FuelPriceChart.rdl" />
+    <Report Include="GDS.gif">
+      <MimeType>image/gif</MimeType>
+    </Report>
+    <Report Include="Nametags.rdl" />
     <Report Include="PkgWtByPlanet.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
