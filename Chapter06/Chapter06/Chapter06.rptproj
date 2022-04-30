@@ -69,6 +69,7 @@
     </Report>
     <Report Include="Nametags.rdl" />
     <Report Include="PkgWtByPlanet.rdl" />
+    <Report Include="PlaceCards.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
