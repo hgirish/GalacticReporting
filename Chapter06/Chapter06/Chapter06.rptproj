@@ -70,6 +70,7 @@
     <Report Include="Nametags.rdl" />
     <Report Include="PkgWtByPlanet.rdl" />
     <Report Include="PlaceCards.rdl" />
+    <Report Include="RateSheet.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
