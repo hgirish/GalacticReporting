@@ -1466,7 +1466,7 @@ GTRAzczMzMyUV8Dx/tNozSg0QGlmHNlLllfAsmjfgaY0NECvJeSDnphXwLY9MDZjPzRAwsBz7+GaV8CF
                 <InterlacedRows>false</InterlacedRows>
                 <EquallySpacedItems>false</EquallySpacedItems>
                 <Position>RightTop</Position>
-                <DockOutsideViewport>false</DockOutsideViewport>
+                <DockOutsideViewport>true</DockOutsideViewport>
                 <Style>
                   <Border>
                     <Color>#00ffffff</Color>
@@ -1579,8 +1579,8 @@ GTRAzczMzMyUV8Dx/tNozSg0QGlmHNlLllfAsmjfgaY0NECvJeSDnphXwLY9MDZjPzRAwsBz7+GaV8CF
             </MapBorderSkin>
             <Top>0.28in</Top>
             <Left>0.47792in</Left>
-            <Height>4.85417in</Height>
-            <Width>6.51042in</Width>
+            <Height>4.71875in</Height>
+            <Width>6.36459in</Width>
             <Style>
               <Border>
                 <Color>Gray</Color>
