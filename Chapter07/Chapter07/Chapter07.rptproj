@@ -57,6 +57,7 @@
   <ItemGroup>
     <Report Include="Deliveries Per Planet.rdl" />
     <Report Include="Earth US Deliveries.rdl" />
+    <Report Include="Employee Homes.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
