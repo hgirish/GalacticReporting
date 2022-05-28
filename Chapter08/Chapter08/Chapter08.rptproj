@@ -55,6 +55,7 @@
     <Report Include="EmployeeList.rdl" />
     <Report Include="EmployeeMailingLabels.rdl" />
     <Report Include="EmployeeTime.rdl" />
+    <Report Include="Overtime.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
