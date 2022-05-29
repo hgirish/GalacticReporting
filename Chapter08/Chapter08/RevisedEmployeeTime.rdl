@@ -528,14 +528,14 @@ ORDER BY Job, Employee_1.EmployeeNumber, Week, TimeEntry.WorkDate</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox95">
+                        <Textbox Name="HoursWorked3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!HoursWorked.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                   </Style>
@@ -544,7 +544,7 @@ ORDER BY Job, Employee_1.EmployeeNumber, Week, TimeEntry.WorkDate</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox95</rd:DefaultName>
+                          <rd:DefaultName>HoursWorked3</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -701,14 +701,14 @@ ORDER BY Job, Employee_1.EmployeeNumber, Week, TimeEntry.WorkDate</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox97">
+                        <Textbox Name="HoursWorked4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!HoursWorked.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                   </Style>
@@ -717,7 +717,7 @@ ORDER BY Job, Employee_1.EmployeeNumber, Week, TimeEntry.WorkDate</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox97</rd:DefaultName>
+                          <rd:DefaultName>HoursWorked4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -904,14 +904,14 @@ ORDER BY Job, Employee_1.EmployeeNumber, Week, TimeEntry.WorkDate</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox98">
+                        <Textbox Name="HoursWorked5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!HoursWorked.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                   </Style>
@@ -920,7 +920,7 @@ ORDER BY Job, Employee_1.EmployeeNumber, Week, TimeEntry.WorkDate</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox98</rd:DefaultName>
+                          <rd:DefaultName>HoursWorked5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -2146,7 +2146,7 @@ ORDER BY Job, Employee_1.EmployeeNumber, Week, TimeEntry.WorkDate</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!HoursWorked.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
