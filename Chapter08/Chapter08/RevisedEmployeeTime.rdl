@@ -331,7 +331,7 @@ ORDER BY Job, Employee_1.EmployeeNumber, Week, TimeEntry.WorkDate</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=WeekdayName(Weekday(Fields!WorkDate.Value))</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <TextDecoration>Underline</TextDecoration>
