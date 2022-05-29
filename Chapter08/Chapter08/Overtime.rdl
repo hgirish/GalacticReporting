@@ -1653,7 +1653,7 @@ ORDER BY Week</CommandText>
   <ReportParameters>
     <ReportParameter Name="Week">
       <DataType>String</DataType>
-      <Prompt>Week</Prompt>
+      <Prompt>Work Week</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>Weeks</DataSetName>
