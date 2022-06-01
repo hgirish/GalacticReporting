@@ -202,6 +202,11 @@ ORDER BY Name</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <TopBorder>
+                              <Style>= IIF(Fields!DeliveryNumber.Value = 
+First(Fields!DeliveryNumber.Value,
+"DeliveryStatus"), "None", "Solid")</Style>
+                            </TopBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -233,6 +238,11 @@ ORDER BY Name</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <TopBorder>
+                              <Style>= IIF(Fields!DeliveryNumber.Value = 
+First(Fields!DeliveryNumber.Value,
+"DeliveryStatus"), "None", "Solid")</Style>
+                            </TopBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -266,6 +276,11 @@ ORDER BY Name</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <TopBorder>
+                              <Style>= IIF(Fields!DeliveryNumber.Value = 
+First(Fields!DeliveryNumber.Value,
+"DeliveryStatus"), "None", "Solid")</Style>
+                            </TopBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -322,6 +337,8 @@ ORDER BY Name</CommandText>
                                   <Value>=Fields!StatusName.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>= IIF(Fields!StatusName.Value = "Delivered", "Green",
+IIF(Fields!StatusName.Value = "In Route", "Blue", "Red"))</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -400,6 +417,9 @@ ORDER BY Name</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -431,6 +451,9 @@ ORDER BY Name</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -462,6 +485,9 @@ ORDER BY Name</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -593,7 +619,15 @@ ORDER BY Name</CommandText>
                           <Style>
                             <Border>
                               <Style>None</Style>
+                              <Width>2pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>= IIF(Fields!StatusName.Value = "Lost",
+"None", "Solid")</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -625,7 +659,15 @@ ORDER BY Name</CommandText>
                           <Style>
                             <Border>
                               <Style>None</Style>
+                              <Width>2pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>= IIF(Fields!StatusName.Value = "Lost",
+"None", "Solid")</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -659,7 +701,15 @@ ORDER BY Name</CommandText>
                           <Style>
                             <Border>
                               <Style>None</Style>
+                              <Width>2pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>= IIF(Fields!StatusName.Value = "Lost",
+"None", "Solid")</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -693,10 +743,18 @@ ORDER BY Name</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox36</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=IIF(Fields!StatusName.Value = "Lost", False, True)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>=iif(Fields!StatusName.Value &lt;&gt; "Lost",
+"None", "Solid")</Style>
+                              <Width>2pt</Width>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -725,10 +783,18 @@ ORDER BY Name</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>ProblemContact</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=IIF(Fields!StatusName.Value = "Lost", False, True)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>=iif(Fields!StatusName.Value &lt;&gt; "Lost",
+"None", "Solid")</Style>
+                              <Width>2pt</Width>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -757,10 +823,18 @@ ORDER BY Name</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>ProblemEMail</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=IIF(Fields!StatusName.Value = "Lost", False, True)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <BottomBorder>
+                              <Style>=iif(Fields!StatusName.Value &lt;&gt; "Lost",
+"None", "Solid")</Style>
+                              <Width>2pt</Width>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -919,6 +993,11 @@ ORDER BY Name</CommandText>
                           <Border>
                             <Style>None</Style>
                           </Border>
+                          <TopBorder>
+                            <Style>= IIF(Fields!DeliveryNumber.Value = 
+First(Fields!DeliveryNumber.Value,
+"DeliveryStatus"), "None", "Solid")</Style>
+                          </TopBorder>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -961,7 +1040,14 @@ ORDER BY Name</CommandText>
             <Style>
               <Border>
                 <Style>None</Style>
+                <Width>6pt</Width>
               </Border>
+              <TopBorder>
+                <Style>Double</Style>
+              </TopBorder>
+              <BottomBorder>
+                <Style>Double</Style>
+              </BottomBorder>
             </Style>
           </Tablix>
         </ReportItems>
