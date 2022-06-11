@@ -52,6 +52,7 @@
     <DataSource Include="Galactic.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Customer List.rdl" />
     <Report Include="DeliveryStatus.rdl" />
     <Report Include="LostDelivery.rdl" />
   </ItemGroup>
