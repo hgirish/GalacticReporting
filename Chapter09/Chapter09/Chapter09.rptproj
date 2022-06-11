@@ -54,6 +54,7 @@
   <ItemGroup>
     <Report Include="Customer List.rdl" />
     <Report Include="DeliveryStatus.rdl" />
+    <Report Include="DeliveryTrend.rdl" />
     <Report Include="LostDelivery.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
