@@ -54,10 +54,12 @@
   <ItemGroup>
     <Report Include="Customer List.rdl" />
     <Report Include="DeliveryAnalysis.rdl" />
+    <Report Include="DeliveryDetail.rdl" />
     <Report Include="DeliveryStatus.rdl" />
     <Report Include="DeliveryTrend.rdl" />
     <Report Include="EmployeeEval.rdl" />
     <Report Include="EvalDetail.rdl" />
+    <Report Include="Invoice.rdl" />
     <Report Include="LostDelivery.rdl" />
     <Report Include="PayrollChecks.rdl" />
   </ItemGroup>
