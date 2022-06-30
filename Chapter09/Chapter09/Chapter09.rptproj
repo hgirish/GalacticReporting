@@ -59,6 +59,7 @@
     <Report Include="DeliveryTrend.rdl" />
     <Report Include="EmployeeEval.rdl" />
     <Report Include="EvalDetail.rdl" />
+    <Report Include="FrontEnd.rdl" />
     <Report Include="Invoice.rdl" />
     <Report Include="LostDelivery.rdl" />
     <Report Include="PayrollChecks.rdl" />

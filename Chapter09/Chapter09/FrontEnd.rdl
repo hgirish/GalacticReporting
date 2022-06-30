@@ -6,62 +6,39 @@
     <DataSource Name="Galactic">
       <DataSourceReference>Galactic</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>7726cd98-1549-444c-b537-8a30506caf20</rd:DataSourceID>
+      <rd:DataSourceID>3648baf7-3ee4-4f88-8c56-ce41bb263a4c</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="InvoiceHeader">
+    <DataSet Name="CustomerInvoices">
       <Query>
         <DataSourceName>Galactic</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@InvoiceNumber">
-            <Value>=Parameters!InvoiceNumber.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>stp_Invoiceheader</CommandText>
+        <CommandText>stp_CustomerInvoices</CommandText>
       </Query>
       <Fields>
-        <Field Name="InvoiceNumber">
-          <DataField>InvoiceNumber</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="CustomerName">
           <DataField>CustomerName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerWebsite">
+          <DataField>CustomerWebsite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ParentName">
+          <DataField>ParentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceNumber">
+          <DataField>InvoiceNumber</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="InvoiceDate">
           <DataField>InvoiceDate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="InvoiceDetail">
-      <Query>
-        <DataSourceName>Galactic</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@InvoiceNumber">
-            <Value>=Parameters!InvoiceNumber.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>stp_InvoiceDetail</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="LineNumber">
-          <DataField>LineNumber</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="DeliveryNumber">
-          <DataField>DeliveryNumber</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
@@ -75,206 +52,49 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.32167in</Width>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.73958in</Height>
+                  <Height>0.25in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Rectangle Name="Rectangle1">
-                          <ReportItems>
-                            <Textbox Name="InvoiceNumber">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!InvoiceNumber.Value</Value>
-                                      <Style>
-                                        <FontFamily>Arial</FontFamily>
-                                        <FontSize>20pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>White</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>InvoiceNumber</rd:DefaultName>
-                              <Top>0.12375in</Top>
-                              <Left>0.13417in</Left>
-                              <Height>0.40625in</Height>
-                              <Width>5.67708in</Width>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <BackgroundColor>Black</BackgroundColor>
-                                <VerticalAlign>Middle</VerticalAlign>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="InvoiceDate">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!InvoiceDate.Value</Value>
-                                      <Style />
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Right</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>InvoiceDate</rd:DefaultName>
-                              <Top>0.64458in</Top>
-                              <Left>4.86333in</Left>
-                              <Height>0.25in</Height>
-                              <Width>1.45833in</Width>
-                              <ZIndex>1</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="CustomerName">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!CustomerName.Value</Value>
-                                      <Style>
-                                        <FontFamily>Arial</FontFamily>
-                                        <FontSize>20pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>CustomerName</rd:DefaultName>
-                              <Top>1.06125in</Top>
-                              <Left>0.13417in</Left>
-                              <Height>0.35417in</Height>
-                              <Width>5.13542in</Width>
-                              <ZIndex>2</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Line Name="Line1">
-                              <Top>1.60292in</Top>
-                              <Height>0in</Height>
-                              <Width>6.32167in</Width>
-                              <ZIndex>3</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>Solid</Style>
-                                  <Width>10pt</Width>
-                                </Border>
-                              </Style>
-                            </Line>
-                          </ReportItems>
-                          <KeepTogether>true</KeepTogether>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                          </Style>
-                        </Rectangle>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-              </TablixRows>
-            </TablixBody>
-            <TablixColumnHierarchy>
-              <TablixMembers>
-                <TablixMember />
-              </TablixMembers>
-            </TablixColumnHierarchy>
-            <TablixRowHierarchy>
-              <TablixMembers>
-                <TablixMember>
-                  <Group Name="Details" />
-                </TablixMember>
-              </TablixMembers>
-            </TablixRowHierarchy>
-            <DataSetName>InvoiceHeader</DataSetName>
-            <Height>1.73958in</Height>
-            <Width>6.32167in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Tablix>
-          <Tablix Name="Tablix2">
-            <TablixBody>
-              <TablixColumns>
-                <TablixColumn>
-                  <Width>2.16667in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.16667in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.16667in</Width>
-                </TablixColumn>
-              </TablixColumns>
-              <TablixRows>
-                <TablixRow>
-                  <Height>0.21354in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="LineNumber">
+                        <Textbox Name="ParentName">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!LineNumber.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!ParentName.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>LineNumber</rd:DefaultName>
+                          <rd:DefaultName>ParentName</rd:DefaultName>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <BookmarkLink>=Fields!ParentName.Value</BookmarkLink>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>None</Style>
+                              <Style>Solid</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -282,61 +102,40 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Description">
+                        <Textbox Name="Textbox13">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Description.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Description</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Amount">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Amount.Value</Value>
+                                  <Value>Website Link</Value>
                                   <Style>
-                                    <Format>C</Format>
+                                    <FontFamily>Arial</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Amount</rd:DefaultName>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Hyperlink>=Fields!CustomerWebsite.Value</Hyperlink>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>None</Style>
+                              <Style>Solid</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -353,24 +152,110 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Subreport Name="srDeliveryDetail">
-                          <ReportName>DeliveryDetail</ReportName>
-                          <Parameters>
-                            <Parameter Name="DeliveryNumber">
-                              <Value>=Fields!DeliveryNumber.Value</Value>
-                            </Parameter>
-                          </Parameters>
+                        <Textbox Name="InvoiceNumber">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!InvoiceNumber.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>InvoiceNumber</rd:DefaultName>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>Invoice</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="InvoiceNumber">
+                                      <Value>=Fields!InvoiceNumber.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
-                        </Subreport>
-                        <ColSpan>3</ColSpan>
+                        </Textbox>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell />
-                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="InvoiceDate">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!InvoiceDate.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>InvoiceDate</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TotalAmount">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TotalAmount.Value</Value>
+                                  <Style>
+                                    <Format>C</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>TotalAmount</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
@@ -385,24 +270,73 @@
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="Details1" />
+                  <Group Name="CustomerName">
+                    <DocumentMapLabel>=Fields!CustomerName.Value</DocumentMapLabel>
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!CustomerName.Value</GroupExpression>
+                    </GroupExpressions>
+                    <PageName>=Fields!CustomerName.Value</PageName>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!CustomerName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="CustomerName">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!CustomerName.Value</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>CustomerName</rd:DefaultName>
+                        <Bookmark>=Fields!CustomerName.Value</Bookmark>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
                   <TablixMembers>
-                    <TablixMember />
                     <TablixMember>
-                      <Visibility>
-                        <Hidden>true</Hidden>
-                        <ToggleItem>LineNumber</ToggleItem>
-                      </Visibility>
+                      <KeepWithGroup>After</KeepWithGroup>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="Details">
+                        <PageBreak>
+                          <BreakLocation>Between</BreakLocation>
+                        </PageBreak>
+                      </Group>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>InvoiceDetail</DataSetName>
-            <Top>2.19667in</Top>
-            <Height>0.46354in</Height>
-            <Width>6.50001in</Width>
-            <ZIndex>1</ZIndex>
+            <DataSetName>CustomerInvoices</DataSetName>
+            <Top>0.7175in</Top>
+            <Left>1.37375in</Left>
+            <Height>0.5in</Height>
+            <Width>4in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -410,10 +344,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4.33333in</Height>
+        <Height>2in</Height>
         <Style />
       </Body>
-      <Width>6.50001in</Width>
+      <Width>6.5in</Width>
       <Page>
         <PageHeader>
           <Height>0.75in</Height>
@@ -475,7 +409,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.6875in</Height>
+          <Height>0.375in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -486,7 +420,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Globals!ReportName</Value>
+                      <Value>=Globals!ReportName &amp; "-" &amp; Globals!PageName</Value>
                       <Style>
                         <FontFamily>Arial</FontFamily>
                         <FontSize>8pt</FontSize>
@@ -593,23 +527,10 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParameters>
-    <ReportParameter Name="InvoiceNumber">
-      <DataType>Integer</DataType>
-      <Prompt>Invoice Number</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
-      <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>InvoiceNumber</ParameterName>
-        </CellDefinition>
-      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <EmbeddedImages>
